@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3188564B2155F3A000BAE997 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318856492155F3A000BAE997 /* SWRevealViewController.m */; };
+		311E5A232156662100A5B7F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E5A222156662100A5B7F4 /* Constants.swift */; };
+		313EED7D215AEA7A009C6CC8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EED7C215AEA7A009C6CC8 /* AuthService.swift */; };
+		313EED7F215AF6E9009C6CC8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EED7E215AF6E9009C6CC8 /* RoundedButton.swift */; };
+		316BB184215733D900753A6F /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316BB183215733D900753A6F /* CreateAccountVC.swift */; };
 		318856502155F78D00BAE997 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188564F2155F78D00BAE997 /* ChatVC.swift */; };
 		318856522155F79C00BAE997 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318856512155F79C00BAE997 /* ChannelVC.swift */; };
+		3188567921560E7900BAE997 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188567821560E7900BAE997 /* GradientView.swift */; };
+		318E78A821566D6D00818DBF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318E78A721566D6D00818DBF /* SWRevealViewController.m */; };
+		318E78BE21566E8000818DBF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318E78BD21566E8000818DBF /* LoginVC.swift */; };
 		31C52C35215381ED00C8BA19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C52C34215381ED00C8BA19 /* AppDelegate.swift */; };
 		31C52C3A215381ED00C8BA19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C52C38215381ED00C8BA19 /* Main.storyboard */; };
 		31C52C3C215381EE00C8BA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C52C3B215381EE00C8BA19 /* Assets.xcassets */; };
@@ -18,11 +24,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		318856482155F3A000BAE997 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
-		318856492155F3A000BAE997 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		3188564A2155F3A000BAE997 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		311E5A222156662100A5B7F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		313EED7C215AEA7A009C6CC8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		313EED7E215AF6E9009C6CC8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		316BB183215733D900753A6F /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		3188564F2155F78D00BAE997 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		318856512155F79C00BAE997 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		3188567821560E7900BAE997 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		318E78A621566D6D00818DBF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		318E78A721566D6D00818DBF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		318E78AA21566D8800818DBF /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		318E78AB21566D8800818DBF /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		318E78AC21566D8800818DBF /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		318E78AD21566D8800818DBF /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		318E78AE21566D8800818DBF /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		318E78AF21566D8800818DBF /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		318E78B021566D8800818DBF /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		318E78B121566D8800818DBF /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		318E78B221566D8800818DBF /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		318E78B321566D8800818DBF /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		318E78B421566D8800818DBF /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		318E78B521566D8800818DBF /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		318E78B621566D8900818DBF /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		318E78B721566D8900818DBF /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		318E78B821566D8900818DBF /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		318E78B921566D8900818DBF /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		318E78BA21566D8900818DBF /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		318E78BB21566D8900818DBF /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		318E78BC21566D9900818DBF /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
+		318E78BD21566E8000818DBF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		31C52C31215381ED00C8BA19 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C52C34215381ED00C8BA19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31C52C39215381ED00C8BA19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,14 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		318856472155F38100BAE997 /* Supporting Files */ = {
+		311E5A212156660B00A5B7F4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				3188564A2155F3A000BAE997 /* SWRevealViewController.h */,
-				318856492155F3A000BAE997 /* SWRevealViewController.m */,
-				318856482155F3A000BAE997 /* Smack-Bridging-Header.h */,
+				311E5A222156662100A5B7F4 /* Constants.swift */,
 			);
-			path = "Supporting Files";
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		313EED7B215AEA67009C6CC8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				313EED7C215AEA7A009C6CC8 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3188564C2155F76000BAE997 /* Controller */ = {
@@ -61,6 +97,8 @@
 			children = (
 				3188564F2155F78D00BAE997 /* ChatVC.swift */,
 				318856512155F79C00BAE997 /* ChannelVC.swift */,
+				318E78BD21566E8000818DBF /* LoginVC.swift */,
+				316BB183215733D900753A6F /* CreateAccountVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -68,6 +106,8 @@
 		3188564D2155F76800BAE997 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3188567821560E7900BAE997 /* GradientView.swift */,
+				313EED7E215AF6E9009C6CC8 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,10 +119,45 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		318E78A521566D5900818DBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				318E78A921566D7D00818DBF /* Fonts */,
+				318E78A621566D6D00818DBF /* SWRevealViewController.h */,
+				318E78A721566D6D00818DBF /* SWRevealViewController.m */,
+				318E78BC21566D9900818DBF /* Smack-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		318E78A921566D7D00818DBF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				318E78B921566D8900818DBF /* Lato-Black.ttf */,
+				318E78AE21566D8800818DBF /* Lato-BlackItalic.ttf */,
+				318E78AB21566D8800818DBF /* Lato-Bold.ttf */,
+				318E78B321566D8800818DBF /* Lato-BoldItalic.ttf */,
+				318E78B221566D8800818DBF /* Lato-Hairline.ttf */,
+				318E78B621566D8900818DBF /* Lato-HairlineItalic.ttf */,
+				318E78B121566D8800818DBF /* Lato-Heavy.ttf */,
+				318E78AC21566D8800818DBF /* Lato-HeavyItalic.ttf */,
+				318E78AD21566D8800818DBF /* Lato-Italic.ttf */,
+				318E78AF21566D8800818DBF /* Lato-Light.ttf */,
+				318E78B821566D8900818DBF /* Lato-LightItalic.ttf */,
+				318E78BB21566D8900818DBF /* Lato-Medium.ttf */,
+				318E78BA21566D8900818DBF /* Lato-MediumItalic.ttf */,
+				318E78B721566D8900818DBF /* Lato-Regular.ttf */,
+				318E78B021566D8800818DBF /* Lato-Semibold.ttf */,
+				318E78B521566D8800818DBF /* Lato-SemiboldItalic.ttf */,
+				318E78B421566D8800818DBF /* Lato-Thin.ttf */,
+				318E78AA21566D8800818DBF /* Lato-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		31C52C28215381ED00C8BA19 = {
 			isa = PBXGroup;
 			children = (
-				318856472155F38100BAE997 /* Supporting Files */,
 				31C52C33215381ED00C8BA19 /* Smack */,
 				31C52C32215381ED00C8BA19 /* Products */,
 				E3C6843AF0F4BE53D93357BC /* Pods */,
@@ -101,6 +176,9 @@
 		31C52C33215381ED00C8BA19 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				313EED7B215AEA67009C6CC8 /* Services */,
+				318E78A521566D5900818DBF /* Supporting Files */,
+				311E5A212156660B00A5B7F4 /* Utilities */,
 				3188564E2155F76E00BAE997 /* Modal */,
 				3188564D2155F76800BAE997 /* View */,
 				3188564C2155F76000BAE997 /* Controller */,
@@ -250,9 +328,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				318856522155F79C00BAE997 /* ChannelVC.swift in Sources */,
+				313EED7F215AF6E9009C6CC8 /* RoundedButton.swift in Sources */,
 				318856502155F78D00BAE997 /* ChatVC.swift in Sources */,
+				316BB184215733D900753A6F /* CreateAccountVC.swift in Sources */,
+				313EED7D215AEA7A009C6CC8 /* AuthService.swift in Sources */,
+				318E78BE21566E8000818DBF /* LoginVC.swift in Sources */,
+				3188567921560E7900BAE997 /* GradientView.swift in Sources */,
 				31C52C35215381ED00C8BA19 /* AppDelegate.swift in Sources */,
-				3188564B2155F3A000BAE997 /* SWRevealViewController.m in Sources */,
+				311E5A232156662100A5B7F4 /* Constants.swift in Sources */,
+				318E78A821566D6D00818DBF /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +490,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.elektra.Smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Smack-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smack/Supporting Files/Smack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -427,7 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.elektra.Smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Smack-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smack/Supporting Files/Smack-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
