@@ -9,5 +9,6 @@ target 'Smack' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'Socket.IO-Client-Swift'
+    pod 'SKActivityIndicatorView', '~> 0.1.0'
 
 end
