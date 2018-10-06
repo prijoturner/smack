@@ -10,5 +10,7 @@ target 'Smack' do
     pod 'SwiftyJSON'
     pod 'Socket.IO-Client-Swift'
     pod 'SKActivityIndicatorView', '~> 0.1.0'
+    pod 'MIBlurPopup'
+    pod 'EasyPopUp'
 
 end

@@ -1,26 +1,37 @@
 //
-//  ProfileVC.swift
-//  Smack
+//  ViewControllerExample.swift
+//  EasyPopUp_Example
 //
-//  Created by Prijo on 30/09/18.
-//  Copyright © 2018 Prijo Turner. All rights reserved.
+//  Created by Mohammad Zakizadeh on 6/8/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
 import UIKit
+import EasyPopUp
 
 class ProfileVC: UIViewController {
-
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userEmail: UILabel!
-    @IBOutlet weak var bgView: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
+    // MARK: - IBOutlets
+    @IBOutlet weak var profileImage: UIImageView?
+    @IBOutlet weak var userName: UILabel?
+    @IBOutlet weak var userEmail: UILabel?
+    @IBOutlet weak var popUpBg: UIImageView!
+    
+    @IBOutlet weak var popupContentView: UIView! {
+        didSet {
+            popUpBg.layer.cornerRadius = 8
+            popUpBg.clipsToBounds = true
+            popupContentView.layer.cornerRadius = 10
+        }
     }
-
-    @IBAction func closeModalPressed(_ sender: Any) {
+    
+    @IBOutlet weak var dismissButton: UIButton! {
+        didSet {
+            dismissButton.layer.cornerRadius = dismissButton.frame.height/2
+        }
+    }
+    
+    @IBAction func dismissVC(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -31,16 +42,15 @@ class ProfileVC: UIViewController {
     }
     
     func setupView() {
-        userName.text = UserDataService.instance.name
-        userEmail.text = UserDataService.instance.email
-        profileImage.image = UIImage(named: UserDataService.instance.avatarName)
-        
-        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
-        bgView.addGestureRecognizer(closeTouch)
+        userName?.text = UserDataService.instance.name
+        userEmail?.text = UserDataService.instance.email
+        profileImage?.image = UIImage(named: UserDataService.instance.avatarName)
     }
-    
-    @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
-        dismiss(animated: true, completion: nil)
+}
+
+extension ProfileVC : EasyPopUpViewControllerDatasource {
+    var popupView: UIView {
+        setupView()
+        return popupContentView
     }
-    
 }
