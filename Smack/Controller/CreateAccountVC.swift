@@ -11,17 +11,20 @@ import SKActivityIndicatorView
 
 class CreateAccountVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //MARK: - Outlets
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    //MARK: - Variables
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
-    
+    var bgColor : UIColor?
     let imagePicker = UIImagePickerController()
     
+    //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -34,6 +37,16 @@ class CreateAccountVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
     }
     
+    func setupView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
+        spinner.isHidden = true
+        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
+        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
+    }
+    
+    //MARK: - Actions
     @IBAction func createAccountPressed(_ sender: Any) {
         
         SKActivityIndicator.spinnerStyle(.spinningFadeCircle)
@@ -52,7 +65,7 @@ class CreateAccountVC: UIViewController, UIImagePickerControllerDelegate, UINavi
                                 SKActivityIndicator.dismiss()
                                 self.performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
                                 
-                                NotificationCenter.default.post(name: NOTIF_USER_DATA_CHANGE, object: nil)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                             }
                         })
                     }
@@ -62,39 +75,26 @@ class CreateAccountVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     @IBAction func pickAvatarPressed(_ sender: Any) {
-//        imagePicker.delegate = self
-//        imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
-//        self.present(imagePicker, animated: true, completion: nil)
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        userImg.image = image
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func pickBGColorPressed(_ sender: Any) {
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
         
-    }
-    
-    @IBAction func pickBgPressed(_ sender: Any) {
-        
+        bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        avatarColor = "[\(r), \(g), \(b), 1]"
+        UIView.animate(withDuration: 0.2) {
+            self.userImg.backgroundColor = self.bgColor
+        }
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
     }
     
-    func setupView() {
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
-        view.addGestureRecognizer(tap)
-        
-        spinner.isHidden = true
-        
-        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
-        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
-        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
-    }
-    
+    //MARK: - Selectors
     @objc func handleTap() {
         view.endEditing(true)
     }

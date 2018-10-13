@@ -13,16 +13,17 @@ class ChannelCell: UITableViewCell {
     //Outlets
     @IBOutlet weak var channelName: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            self.layer.backgroundColor = UIColor(white: 1, alpha: 0.2).cgColor
+            self.layer.backgroundColor = UIColor(red: 73.0/255.0, green: 196.0/255.0, blue: 161.0/255.0, alpha: 1).cgColor
+            self.layer.cornerRadius = 4.0
+            
         } else {
             self.layer.backgroundColor = UIColor.clear.cgColor
         }
@@ -31,6 +32,13 @@ class ChannelCell: UITableViewCell {
     func configureCell(channel: Channel) {
         let title = channel.channelTitle ?? ""
         channelName.text = "#\(title)"
+        channelName.font = UIFont(name: "Lato-Regular", size: 17)
+        
+        for id in MessageService.instance.unreadChannels {
+            if id == channel.id {
+                channelName.font = UIFont(name: "Lato-Bold", size: 22)
+            }
+        }
     }
    
 
